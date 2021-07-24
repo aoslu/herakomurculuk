@@ -11,6 +11,7 @@ django-storages = "*"
 pillow = "*"
 django-environ = "*"
 django-crispy-forms = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

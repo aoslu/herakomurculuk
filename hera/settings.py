@@ -27,7 +27,7 @@ SECRET_KEY=env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['3.66.219.138','3.66.219.138:8000','127.0.0.1','127.0.0.1:8000','localhost','localhost:8000']
 
 
 # Application definition
@@ -78,13 +78,16 @@ WSGI_APPLICATION = 'hera.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+DDATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME': env('DB_NAME'),
+      'USER': env('DB_USER'),
+      'PASSWORD': env('DB_PASSWORD'),
+      'HOST': 'localhost',
+      'PORT': '5432',
+   }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
